@@ -1,0 +1,130 @@
+/* The main navbar container */
+.navbar {
+  display: flex; /* Aligns children in a row */
+  justify-content: space-between; /* Places space between items */
+  align-items: center; /* Vertically centers items */
+  height: 60px; /* Sets the height of the navbar */
+  padding: 0 50px; /* Adds more padding for a larger screen */
+  background-color: #17a2b8; /* Background color (info color from Bootstrap) */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* The logo section */
+.logo-cont {
+  font-size: 26px; /* Larger font size for the logo */
+  font-weight: bold; /* Bold text for the logo */
+  color: #fff; /* White text color */
+  margin-left: 10px;
+}
+
+/* The container for the navigation links */
+.links-cont {
+  flex-grow: 1; /* Allows the links container to expand */
+  display: flex; /* Aligns links in a row */
+  justify-content: center; /* Centers the links */
+}
+
+/* The list containing all navigation buttons */
+.link-list-cont {
+  list-style-type: none; /* Removes default list styling */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Aligns list items in a row */
+  gap: 40px; /* Adds more space between the list items for emphasis */
+}
+
+/* Individual navigation buttons */
+.navabarBtn {
+  color: #fff; /* White text color */
+  font-size: 20px; /* Larger font size for prominence */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  text-decoration: none; /* Removes underline from links */
+  padding: 10px 20px; /* Adds padding for a button-like appearance */
+  border-radius: 5px; /* Rounds the corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for navigation buttons */
+/* .navabarBtn:hover {
+      background-color: #138496; 
+      text-decoration: none; 
+    } */
+/* Individual navigation buttons */
+.navabarBtn {
+  color: #fff; /* White text color */
+  font-size: 20px; /* Larger font size for prominence */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  text-decoration: none; /* Removes default underline from links */
+  padding: 10px 20px; /* Adds padding for spacing */
+  position: relative; /* Needed for the underline animation */
+}
+
+/* Adding the underline effect directly under the text on hover */
+.navabarBtn::after {
+  content: ""; /* No text, just a line */
+  position: absolute; /* Position relative to the text */
+  left: 0; /* Start from the left edge */
+  bottom: 0; /* Position the underline directly beneath the text */
+  width: 0%; /* Start with no width */
+  height: 2px; /* Line thickness */
+  background-color: #fff; /* White color to match the text */
+  transition: width 0.3s ease; /* Smooth animation of the width */
+}
+
+.navabarBtn:hover::after {
+  width: 100%; /* Expand to full width of the text on hover */
+}
+
+/* Remove any padding that could cause a gap */
+.link-list-cont,
+.navabarBtn {
+  padding-bottom: 0; /* Ensure no padding below the text */
+}
+
+/* The user section container */
+.user-cont {
+  display: flex; /* Aligns user section in a row */
+  align-items: center; /* Vertically centers items */
+  position: relative; /* Allows for positioning dropdown relative to this */
+}
+
+/* The user image (avatar) */
+.user-img {
+  width: 50px; /* Slightly larger width for the image */
+  height: 50px; /* Slightly larger height for the image */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the entire area */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  margin-right: 30px;
+}
+
+/* The dropdown menu */
+.dropdown-menu {
+  position: absolute; /* Positions the dropdown absolutely relative to its container */
+  top: 80px; /* Positions the dropdown just below the navbar */
+  right: 0; /* Aligns dropdown to the right edge */
+  min-width: 150px; /* Ensures dropdown has a minimum width */
+  background-color: #fff; /* White background for the dropdown */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Rounded corners for the dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  z-index: 1000; /* Ensures dropdown appears above other elements */
+}
+
+/* The individual items in the dropdown menu */
+.dropdown-item {
+  padding: 10px 10px; /* Adds padding to each item */
+  font-size: 16px; /* Font size for dropdown items */
+  color: #333; /* Dark gray text color */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+  background-color: #f8f9fa; /* Light gray background on hover */
+}
+
+/* Hides the default dropdown arrow */
+.dropdown-toggle::after {
+  display: none; /* Removes the default arrow that appears with dropdowns */
+}
